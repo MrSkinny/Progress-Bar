@@ -1,13 +1,13 @@
 function ProgressBar(start, end) {
-  this._start = start || 1;
-  this._end = end || 100;
+  this.startIndex = start || 1;
+  this.endIndex = end || 100;
 }
 
 ProgressBar.prototype.start = function(onStart, onProgress, onEnd, interval) {
   var bar = this;
   
-  var i = bar._start;
-  var e = bar._end;
+  var i = bar.startIndex;
+  var e = bar.endIndex;
   interval = interval || 10;
   
   onStart();

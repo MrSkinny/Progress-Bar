@@ -1,11 +1,3 @@
-function printBlank(n){
-  var list = '';
-  for ( var i = 0; i < n; i++ ) {
-    list += String.fromCharCode(32);
-  }
-  return list;
-};
-
 function ProgressBar(start, end) {
   this._start = start || 1;
   this._end = end || 100;
@@ -31,5 +23,4 @@ ProgressBar.prototype.start = function(onStart, onProgress, onEnd, interval) {
   
 };
 
-exports.ProgressBar = ProgressBar;
-exports.printBlank = printBlank;
+module.exports = ProgressBar;

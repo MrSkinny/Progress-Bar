@@ -6,17 +6,17 @@ function ProgressBar(start, end) {
 ProgressBar.prototype.start = function(onStart, onProgress, onEnd, interval) {
   var bar = this;
   
-  var s = bar._start;
+  var i = bar._start;
   var e = bar._end;
   interval = interval || 10;
   
   onStart();
   
-  var int = setInterval(function() {
-    s++;
-    if ( s % interval === 0 ) onProgress(s);
-    if ( s > e ) {
-      clearInterval(int);
+  var intId = setInterval(function() {
+    i++;
+    if ( i % interval === 0 ) onProgress(i);
+    if ( i > e ) {
+      clearInterval(intId);
       onEnd();
     }
   }, 50);
